@@ -15,6 +15,7 @@ def anagram(firstWords, secondWords):
     words = zip(firstWords, secondWords)
 
     for x in words:
+        # Counting method
         anagram = 0
 
         c1 = [0]*26
