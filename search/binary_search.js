@@ -3,10 +3,13 @@ var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 /**
 * @param {Numbers[]} arr - sorted array of numbers
 * @param {Number} value - value to be searched
+* @param {Boolean} labels - show logs or not
 */
-function binarySearch(arr, value) {
+exports.binarySearch = function(arr, value, labels) {
 
-  console.log('Searching for ' + value);
+  if (labels) {
+    console.log('Searching for ' + value);
+  }
 
   var min_index = 0;
   var max_index = arr.length - 1;
@@ -18,7 +21,9 @@ function binarySearch(arr, value) {
     var middle_index = Math.floor((max_index + min_index) / 2);
     var number = arr[middle_index];
 
-    console.log('Evaluating: ' + arr[middle_index] + ' ...');
+    if (labels) {
+      console.log('Evaluating: ' + arr[middle_index] + ' ...');
+    }
 
     if (number == value) {
       found_index = middle_index;
@@ -35,8 +40,7 @@ function binarySearch(arr, value) {
     }
   }
 
-  return found ? 'Found ' + value + ' at index of ' + found_index : 'Not found';
+  // return found ? 'Found ' + value + ' at index of ' + found_index : 'Not found';
+  return found ? true : false;
 
-}
-
-console.log(binarySearch(array, 14));
+};
