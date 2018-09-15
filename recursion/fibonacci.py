@@ -2,8 +2,6 @@ def fib_recursive(n):
     # Exponential - T(n - 1) + T(n - 2)
 
     # Check if Base Case
-    if n < 0:
-        return False
     if n <= 2:
         return 1
     
@@ -16,9 +14,11 @@ memoMap = {}
 def fib_dynamic(n, memo):
     # Linear Time O(N), Linear Space O(N)
 
+    # Check Cache
     if n in memo:
         return memo[n]
 
+    # Check Base Case
     if n <= 2:
         return 1
     else:
